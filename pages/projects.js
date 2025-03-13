@@ -9,28 +9,12 @@ const projects = [
     tags: ["AI", "Machine Learning", "TypeScript", "Python"],
     githubUrl: null, // Proprietary
     liveUrl: null,
-    codeSnippet: `// Example of enhanced context intelligence
-class ContextAnalyzer {
-  /**
-   * Analyzes code patterns to improve AI code suggestions
-   * by considering project structure and coding conventions.
-   */
-  async enhanceContext(codeFragment, projectMetadata) {
-    // Proprietary implementation for GitHub Copilot
-    const enhancedContext = await this.aiProcessor.process({
-      code: codeFragment,
-      metadata: projectMetadata,
-      patterns: await this.patternDetector.analyze(projectMetadata)
-    });
-    
-    return enhancedContext;
-  }
-}`
+    codeSnippet: null
   },
   {
     title: "Spotify Music Trend Predictor",
     description: "Built a machine learning model that predicts music trend popularity using Spotify data, with visualization of prediction confidence and feature importance.",
-    tags: ["Python", "TensorFlow", "Spotify API", "Data Visualization"],
+    tags: ["React.js", "CSS", "Express.js", "Python", "TensorFlow", "Spotify API", "Data Visualization"],
     githubUrl: "https://github.com/mohaimenhasan/Crystal-Ball-Music-Trend-Predictor-Hack-The-6",
     liveUrl: "https://mohaimenhasan.github.io/Crystal-Ball-Music-Trend-Predictor-Hack-The-6/",
     codeSnippet: `import tensorflow as tf

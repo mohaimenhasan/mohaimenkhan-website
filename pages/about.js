@@ -114,11 +114,33 @@ export default function About() {
               <div className="mt-8 space-y-6">
                 <div className="border-l-4 border-code-blue pl-6 py-2">
                   <h3 className="text-xl font-semibold text-white">Microsoft</h3>
-                  <p className="text-code-blue font-mono">Senior Software Engineer, Cloud & AI Division</p>
-                  <p className="text-gray-400 text-sm mb-2">2020 - Present</p>
+                  <p className="text-code-blue font-mono">Senior Software Engineer (L62-L63), Cloud & AI Division</p>
+                  <p className="text-gray-400 text-sm mb-2">2022 - Present</p>
                   <p className="text-gray-300">
                     Working on developer productivity and AI-driven solutions, including advancements in 
                     generative AI that enhance code context for GitHub Copilot.
+                    Patented algorithm to reduce false positives in code generation, improving code quality
+                    and developer efficiency.
+                  </p>
+                </div>
+
+                <div className="border-l-4 border-code-blue pl-6 py-2">
+                  <h3 className="text-xl font-semibold text-white">Amazon</h3>
+                  <p className="text-code-green font-mono">Software Engineer (L4), Amazon Learning Products</p>
+                  <p className="text-gray-400 text-sm mb-2">2021 - 2022</p>
+                  <p className="text-gray-300">
+                    Worked on the Amazon Learning Products team, building tools to enable learning across any 
+                    platform, device, or application.
+                  </p>
+                </div>
+
+                <div className="border-l-4 border-code-blue pl-6 py-2">
+                  <h3 className="text-xl font-semibold text-white">Micrsoft</h3>
+                  <p className="text-code-blue font-mono">Software Engineer (L59-L60), Windows Packaging and Updates</p>
+                  <p className="text-gray-400 text-sm mb-2">2020 - 2021</p>
+                  <p className="text-gray-300">
+                    Worked on the Windows updates and packaging team, providing a platform to validate, test, and 
+                    package windows updates before they are released to the public. 
                   </p>
                 </div>
                 
@@ -129,6 +151,8 @@ export default function About() {
                   <p className="text-gray-300">
                     Developed an AI-powered rental bidding platform allowing tenants to bid on properties 
                     before public listing.
+                    Patented AI model for accurate rental price prediction, achieving 90% accuracy.
+                    Link: <a href="https://patents.google.com/patent/US20210049677A1" target="_blank" rel="noopener noreferrer" className="text-code-blue hover:underline">Google Patent</a>
                   </p>
                 </div>
                 
@@ -190,7 +214,7 @@ export default function About() {
               <span className="text-code-green mr-2">#</span> Resume
             </h2>
             
-            <ResumeViewer pdfUrl="/Mohaimen_Khan_Resume.pdf" />
+            <ResumeViewer pdfUrl="../Mohaimen_Khan_Resume.pdf" />
           </motion.div>
         </div>
       </div>

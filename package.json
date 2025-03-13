@@ -1,0 +1,26 @@
+{
+  "name": "mohaimenkhan-website",
+  "description": "Mohaimen's personal website",
+  "author": {
+    "name": "Mohaimen Khan",
+    "email": "mohaimenhasan@gmail.com"
+  },
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && next export",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "tailwindcss": "latest",
+    "postcss": "latest",
+    "autoprefixer": "latest",
+    "rss-parser": "^3.12.0",
+    "framer-motion": "^6.2.6"
+  }
+}
+

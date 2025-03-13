@@ -1,32 +1,69 @@
 import Layout from '../components/Layout';
 import { motion } from 'framer-motion';
 import { FaRegCalendarAlt, FaExternalLinkAlt } from 'react-icons/fa';
-import Parser from 'rss-parser';
+import { useState, useEffect } from 'react';
 
-export async function getStaticProps() {
-  try {
-    const parser = new Parser();
-    const feed = await parser.parseURL('https://mohaimenkhan.substack.com/feed');
-    // Limit to the latest 5 posts
-    const posts = feed.items.slice(0, 5).map(item => ({
-      title: item.title,
-      link: item.link,
-      pubDate: item.pubDate,
-      contentSnippet: item.contentSnippet?.substring(0, 200) + "..." || ""
-    }));
+// We're no longer using getStaticProps - all fetching happens client-side
 
-    return {
-      props: { posts }
-    };
-  } catch (error) {
-    console.error('Failed to fetch RSS feed:', error);
-    return {
-      props: { posts: [] }
-    };
-  }
-}
+export default function Blog() {
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
-export default function Blog({ posts }) {
+  // Fetch posts on component mount (client-side only)
+  useEffect(() => {
+    async function fetchPosts() {
+      if (typeof window === 'undefined') return;
+      
+      try {
+        setLoading(true);
+        // Use a CORS proxy to fetch the RSS feed on the client side
+        const response = await fetch('https://api.allorigins.win/get?url=' + 
+          encodeURIComponent('https://mohaimenkhan.substack.com/feed'));
+        
+        if (!response.ok) throw new Error('Network response was not ok');
+        const data = await response.json();
+        
+        if (data.contents) {
+          // Parse the XML content
+          const parser = new DOMParser();
+          const xml = parser.parseFromString(data.contents, 'text/xml');
+          const items = xml.querySelectorAll('item');
+          
+          const fetchedPosts = Array.from(items).slice(0, 5).map(item => {
+            const title = item.querySelector('title')?.textContent || '';
+            const link = item.querySelector('link')?.textContent || '';
+            const pubDate = item.querySelector('pubDate')?.textContent || '';
+            
+            // Get content and create snippet
+            let content = item.querySelector('description')?.textContent || '';
+            // Remove HTML tags for a cleaner snippet
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = content;
+            content = tempDiv.textContent || tempDiv.innerText || '';
+            const contentSnippet = content.substring(0, 200) + '...';
+            
+            return { title, link, pubDate, contentSnippet };
+          });
+          
+          if (fetchedPosts.length > 0) {
+            setPosts(fetchedPosts);
+            setError(false);
+          } else {
+            setError(true);
+          }
+        }
+      } catch (error) {
+        console.error('Client-side fetch failed:', error);
+        setError(true);
+      } finally {
+        setLoading(false);
+      }
+    }
+    
+    fetchPosts();
+  }, []);
+
   return (
     <Layout title="Blog | Mohaimen Khan" description="Read Mohaimen Khan's latest blog posts on software engineering, AI, and technology.">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -51,7 +88,14 @@ export default function Blog({ posts }) {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          {posts.length > 0 ? (
+          {loading ? (
+            <div className="text-center py-12 bg-gray-800 rounded-lg border border-gray-700">
+              <h3 className="text-xl font-bold text-white mb-2">Loading posts...</h3>
+              <p className="text-gray-300">
+                Fetching the latest blog posts from Substack.
+              </p>
+            </div>
+          ) : posts.length > 0 ? (
             <div className="space-y-10">
               {posts.map((post, index) => (
                 <motion.article 
@@ -98,7 +142,9 @@ export default function Blog({ posts }) {
             <div className="text-center py-12 bg-gray-800 rounded-lg border border-gray-700">
               <h3 className="text-xl font-bold text-white mb-2">No posts available</h3>
               <p className="text-gray-300">
-                Unable to fetch blog posts at the moment. Please check back later.
+                {error ? 
+                  "Unable to fetch blog posts at the moment. Please check back later." : 
+                  "No blog posts found."}
               </p>
             </div>
           )}

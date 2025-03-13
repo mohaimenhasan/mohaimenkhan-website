@@ -168,7 +168,7 @@ export default function Projects() {
           </p>
           
           <motion.a 
-            href="/contact"
+            href="/portfolio/contact"
             className="inline-block px-6 py-3 bg-code-blue text-white rounded font-medium hover:bg-blue-700 transition"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

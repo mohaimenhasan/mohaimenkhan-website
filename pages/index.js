@@ -57,7 +57,7 @@ export default function Home() {
               
               <div className="flex flex-wrap gap-3 mb-8">
                 <motion.a 
-                  href="/about" 
+                  href="/portfolio/about" 
                   className="px-6 py-3 rounded bg-code-blue text-white font-medium flex items-center gap-2 hover:bg-blue-700 transition"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -66,7 +66,7 @@ export default function Home() {
                 </motion.a>
                 
                 <motion.a 
-                  href="/projects" 
+                  href="/portfolio/projects" 
                   className="px-6 py-3 rounded bg-gray-800 text-white font-medium flex items-center gap-2 hover:bg-gray-700 transition"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -75,7 +75,7 @@ export default function Home() {
                 </motion.a>
                 
                 <motion.a 
-                  href="/contact" 
+                  href="/portfolio/contact" 
                   className="px-6 py-3 rounded bg-gray-800 text-white font-medium flex items-center gap-2 hover:bg-gray-700 transition"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -113,7 +113,7 @@ export default function Home() {
               <div className="bg-gray-800 rounded-lg p-6 border border-gray-700 hover:border-code-blue transition-colors">
                 <h3 className="text-code-yellow font-mono mb-2">Microsoft</h3>
                 <p className="text-gray-300 mb-4">Leading development on AI-powered experiences for developer productivity tools.</p>
-                <Link href="/projects" className="text-code-blue hover:underline flex items-center">
+                <Link href="/portfolio/projects" className="text-code-blue hover:underline flex items-center">
                   <span className="mr-2">Learn more</span>
                   <FaArrowRight size={12} />
                 </Link>
@@ -122,7 +122,7 @@ export default function Home() {
               <div className="bg-gray-800 rounded-lg p-6 border border-gray-700 hover:border-code-blue transition-colors">
                 <h3 className="text-code-yellow font-mono mb-2">Full-Stack Development</h3>
                 <p className="text-gray-300 mb-4">Experience with React, Node.js, TypeScript, Next.js and modern cloud architectures.</p>
-                <Link href="/about" className="text-code-blue hover:underline flex items-center">
+                <Link href="/portfolio/about" className="text-code-blue hover:underline flex items-center">
                   <span className="mr-2">View skills</span>
                   <FaArrowRight size={12} />
                 </Link>
@@ -131,7 +131,7 @@ export default function Home() {
               <div className="bg-gray-800 rounded-lg p-6 border border-gray-700 hover:border-code-blue transition-colors">
                 <h3 className="text-code-yellow font-mono mb-2">Machine Learning</h3>
                 <p className="text-gray-300 mb-4">Building AI solutions that enhance developer workflows and productivity.</p>
-                <Link href="/projects" className="text-code-blue hover:underline flex items-center">
+                <Link href="/portfolio/projects" className="text-code-blue hover:underline flex items-center">
                   <span className="mr-2">See projects</span>
                   <FaArrowRight size={12} />
                 </Link>

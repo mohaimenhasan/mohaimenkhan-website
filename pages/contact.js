@@ -19,7 +19,7 @@ const socialLinks = [
   {
     name: 'Twitter',
     icon: <FaTwitter size={24} />,
-    url: 'https://twitter.com/mohaimenhasan',
+    url: 'https://x.com/whoismohaimen',
     color: 'hover:text-blue-500'
   },
   {

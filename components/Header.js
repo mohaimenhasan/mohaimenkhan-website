@@ -47,14 +47,14 @@ const Header = ({ currentPage }) => {
   const socials = [
     { href: 'https://github.com/mohaimenhasan', icon: <FaGithub size={20} />, label: 'GitHub' },
     { href: 'https://linkedin.com/in/mohaimenhasan', icon: <FaLinkedin size={20} />, label: 'LinkedIn' },
-    { href: 'https://twitter.com/mohaimenhasan', icon: <FaTwitter size={20} />, label: 'Twitter' },
+    { href: 'https://x.com/whoismohaimen', icon: <FaTwitter size={20} />, label: 'Twitter' },
   ];
 
   return (
     <header className="py-4 px-6 bg-terminal-black border-b border-gray-800 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <div className="flex items-center">
-          <Link href="/" className="text-xl font-bold text-white font-mono flex items-center">
+          <Link href="/portfolio" className="text-xl font-bold text-white font-mono flex items-center">
             <span className="text-code-blue">&lt;</span>
             <span className="mx-1">MK</span>
             <span className="text-code-blue">/&gt;</span>

@@ -190,7 +190,7 @@ export default function About() {
               <span className="text-code-green mr-2">#</span> Resume
             </h2>
             
-            <ResumeViewer pdfUrl="/Mohaimen Khan - Senior Software Engineer Resume.pdf" />
+            <ResumeViewer pdfUrl="/Mohaimen_Khan_Resume.pdf" />
           </motion.div>
         </div>
       </div>

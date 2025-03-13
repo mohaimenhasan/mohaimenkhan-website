@@ -192,7 +192,7 @@ export default function About() {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-code-blue pl-6 py-2">
+                <div className="border-l-4 border-code-green pl-6 py-2">
                   <h3 className="text-xl font-semibold text-white">Amazon</h3>
                   <p className="text-code-green font-mono">Software Engineer (L4), Amazon Learning Products</p>
                   <p className="text-gray-400 text-sm mb-2">

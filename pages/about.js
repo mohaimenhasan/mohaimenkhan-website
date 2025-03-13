@@ -46,7 +46,7 @@ const experienceCode = `
 // Microsoft Experience
 const microsoftRole = {
   title: "Senior Software Engineer",
-  team: "Cloud & AI Division",
+  team: "Core AI Division",
   focus: "Developer Productivity",
   achievements: [
     "Led development of AI-powered code context enhancements for GitHub Copilot",
@@ -80,7 +80,7 @@ export default function About() {
               transition={{ duration: 0.5, delay: 0.1 }}
             >
               <p className="mb-4">
-                Hello! I'm Mohaimen Khan, a Senior Software Engineer at Microsoft working in the Cloud & AI division. 
+                Hello! I'm Mohaimen Khan, a Senior Software Engineer at Microsoft working in the Core AI division. 
                 I specialize in developing AI-powered tools that enhance developer productivity and workflows.
               </p>
               
@@ -114,7 +114,7 @@ export default function About() {
               <div className="mt-8 space-y-6">
                 <div className="border-l-4 border-code-blue pl-6 py-2">
                   <h3 className="text-xl font-semibold text-white">Microsoft</h3>
-                  <p className="text-code-blue font-mono">Senior Software Engineer (L62-L63), Cloud & AI Division</p>
+                  <p className="text-code-blue font-mono">Senior Software Engineer (L62-L63), Core AI Division</p>
                   <p className="text-gray-400 text-sm mb-2">2022 - Present</p>
                   <p className="text-gray-300">
                     Working on developer productivity and AI-driven solutions, including advancements in 

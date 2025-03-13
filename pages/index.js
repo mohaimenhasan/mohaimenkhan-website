@@ -85,7 +85,7 @@ export default function Home() {
               </div>
               
               <p className="text-gray-300 text-lg mb-8">
-                Building innovative solutions for complex problems at Microsoft's Cloud & AI division.
+                Building innovative solutions for complex problems at Microsoft's Core AI division.
                 I'm passionate about developer tools, AI technologies, and creating impactful software.
               </p>
               

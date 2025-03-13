@@ -118,7 +118,7 @@ export default function Contact() {
                   <span className="text-code-green mr-2">#</span> Location
                 </h2>
                 <p className="text-gray-300 font-mono">
-                  <span className="text-code-purple">const</span> <span className="text-code-blue">location</span> = <span className="text-code-orange">"Toronto, Canada"</span>;
+                  <span className="text-code-purple">const</span> <span className="text-code-blue">location</span> = <span className="text-code-orange">"Seattle, USA"</span>;
                 </p>
               </div>
             </motion.div>

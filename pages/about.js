@@ -3,11 +3,75 @@ import dynamic from 'next/dynamic';
 import CodeBlock from '../components/CodeBlock';
 import { motion } from 'framer-motion';
 import { FaDatabase, FaCode, FaCloud, FaRobot, FaDesktop, FaServer } from 'react-icons/fa';
+import { useState, useEffect } from 'react';
 
 // Load the ResumeViewer component only on client-side
 const ResumeViewer = dynamic(() => import('../components/ResumeViewer'), {
   ssr: false,
 });
+
+// Time counter component to display duration since start date
+const TimeCounter = ({ startDate }) => {
+  const [duration, setDuration] = useState('');
+
+  useEffect(() => {
+    const calculateDuration = () => {
+      const start = new Date(startDate);
+      const now = new Date();
+      
+      const diff = Math.floor((now - start) / 1000); // difference in seconds
+      
+      const years = Math.floor(diff / (60 * 60 * 24 * 365));
+      const months = Math.floor((diff % (60 * 60 * 24 * 365)) / (60 * 60 * 24 * 30));
+      const days = Math.floor((diff % (60 * 60 * 24 * 30)) / (60 * 60 * 24));
+      const hours = Math.floor((diff % (60 * 60 * 24)) / (60 * 60));
+      const minutes = Math.floor((diff % (60 * 60)) / 60);
+      const seconds = Math.floor(diff % 60);
+      
+      const formatNum = num => num.toString().padStart(2, '0');
+      
+      let durationText = '';
+      if (years > 0) {
+        durationText += `${years}y `;
+      }
+      if (months > 0 || years > 0) {
+        durationText += `${months}m `;
+      }
+      durationText += `${days}d ${formatNum(hours)}:${formatNum(minutes)}:${formatNum(seconds)}`;
+      
+      setDuration(durationText);
+    };
+    
+    calculateDuration();
+    const timer = setInterval(calculateDuration, 1000); // Update every second
+    
+    return () => clearInterval(timer);
+  }, [startDate]);
+
+  return <span className="text-code-gray ml-2">({duration})</span>;
+};
+
+// Job duration component to display duration between start and end dates
+const JobDuration = ({ startDate, endDate }) => {
+  const start = new Date(startDate);
+  const end = new Date(endDate);
+  
+  const diff = Math.floor((end - start) / 1000); // difference in seconds
+  
+  const years = Math.floor(diff / (60 * 60 * 24 * 365));
+  const months = Math.floor((diff % (60 * 60 * 24 * 365)) / (60 * 60 * 24 * 30));
+  const days = Math.floor((diff % (60 * 60 * 24 * 30)) / (60 * 60 * 24));
+  
+  let durationText = '';
+  if (years > 0) {
+    durationText += `${years}y `;
+  }
+  if (months > 0 || years > 0) {
+    durationText += `${months}m `;
+  }
+  
+  return <span className="text-code-gray ml-2">({durationText})</span>;
+};
 
 const skillCategories = [
   {
@@ -114,8 +178,12 @@ export default function About() {
               <div className="mt-8 space-y-6">
                 <div className="border-l-4 border-code-blue pl-6 py-2">
                   <h3 className="text-xl font-semibold text-white">Microsoft</h3>
-                  <p className="text-code-blue font-mono">Senior Software Engineer (L62-L63), Core AI Division</p>
-                  <p className="text-gray-400 text-sm mb-2">2022 - Present</p>
+                  <p className="text-code-blue font-mono">
+                    Senior Software Engineer (L62-L63), Core AI Division
+                  </p>
+                  <p className="text-gray-400 text-sm mb-2">
+                    August 2022 - Present <TimeCounter startDate="2022-08-01" />
+                  </p>
                   <p className="text-gray-300">
                     Working on developer productivity and AI-driven solutions, including advancements in 
                     generative AI that enhance code context for GitHub Copilot.
@@ -127,7 +195,9 @@ export default function About() {
                 <div className="border-l-4 border-code-blue pl-6 py-2">
                   <h3 className="text-xl font-semibold text-white">Amazon</h3>
                   <p className="text-code-green font-mono">Software Engineer (L4), Amazon Learning Products</p>
-                  <p className="text-gray-400 text-sm mb-2">2021 - 2022</p>
+                  <p className="text-gray-400 text-sm mb-2">
+                    October 2021 - August 2022 <JobDuration startDate="2021-10-01" endDate="2022-08-01" />
+                  </p>
                   <p className="text-gray-300">
                     Worked on the Amazon Learning Products team, building tools to enable learning across any 
                     platform, device, or application.
@@ -135,9 +205,11 @@ export default function About() {
                 </div>
 
                 <div className="border-l-4 border-code-blue pl-6 py-2">
-                  <h3 className="text-xl font-semibold text-white">Micrsoft</h3>
+                  <h3 className="text-xl font-semibold text-white">Microsoft</h3>
                   <p className="text-code-blue font-mono">Software Engineer (L59-L60), Windows Packaging and Updates</p>
-                  <p className="text-gray-400 text-sm mb-2">2020 - 2021</p>
+                  <p className="text-gray-400 text-sm mb-2">
+                    August 2020 - October 2021 <JobDuration startDate="2020-08-01" endDate="2021-10-01" />
+                  </p>
                   <p className="text-gray-300">
                     Worked on the Windows updates and packaging team, providing a platform to validate, test, and 
                     package windows updates before they are released to the public. 
@@ -147,7 +219,9 @@ export default function About() {
                 <div className="border-l-4 border-code-yellow pl-6 py-2">
                   <h3 className="text-xl font-semibold text-white">RBC Amplify</h3>
                   <p className="text-code-yellow font-mono">Software Engineering Intern</p>
-                  <p className="text-gray-400 text-sm mb-2">2019</p>
+                  <p className="text-gray-400 text-sm mb-2">
+                    May 2019 - August 2019 <JobDuration startDate="2019-05-01" endDate="2019-08-31" />
+                  </p>
                   <p className="text-gray-300">
                     Developed an AI-powered rental bidding platform allowing tenants to bid on properties 
                     before public listing.
@@ -159,7 +233,9 @@ export default function About() {
                 <div className="border-l-4 border-code-orange pl-6 py-2">
                   <h3 className="text-xl font-semibold text-white">TELUS</h3>
                   <p className="text-code-orange font-mono">Software Engineering Intern</p>
-                  <p className="text-gray-400 text-sm mb-2">2018</p>
+                  <p className="text-gray-400 text-sm mb-2">
+                    January 2019 - May 2019 <JobDuration startDate="2019-01-01" endDate="2019-05-01" />
+                  </p>
                   <p className="text-gray-300">
                     Utilized machine learning to detect and resolve network bottlenecks, enhancing telecom 
                     network performance.
@@ -169,7 +245,9 @@ export default function About() {
                 <div className="border-l-4 border-code-purple pl-6 py-2">
                   <h3 className="text-xl font-semibold text-white">BlueCat Networks</h3>
                   <p className="text-code-purple font-mono">Software Engineering Intern</p>
-                  <p className="text-gray-400 text-sm mb-2">2017</p>
+                  <p className="text-gray-400 text-sm mb-2">
+                    May 2018 - December 2018 <JobDuration startDate="2018-05-01" endDate="2018-12-31" />
+                  </p>
                   <p className="text-gray-300">
                     Automated virtual machine deployments, gaining practical experience in cloud computing 
                     and DevOps practices.

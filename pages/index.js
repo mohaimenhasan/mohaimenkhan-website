@@ -10,16 +10,17 @@ const codeSnippet = `// Welcome to my portfolio
 import { Mohaimen } from 'portfolio';
 
 const skills = [
-  'JavaScript', 'React', 'Next.js',
+  'Node.js', 'React', 'Next.js',
   'TypeScript', 'Node.js', 'Python',
-  'Cloud', 'AI', 'Machine Learning'
+  'Azure', 'AWS', 'LLM', 'Machine Learning',
+  'Docker', 'SQL', 'NoSQL', 'GraphQL', 'CI/CD'
 ];
 
 function Introduction() {
   return (
     <Mohaimen 
       role="Senior Software Engineer @ Microsoft"
-      focus="Cloud & AI"
+      focus="AI Incubation"
       passion="Building innovative tools for developers"
     />
   );

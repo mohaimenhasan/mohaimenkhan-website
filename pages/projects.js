@@ -6,7 +6,7 @@ const projects = [
   {
     title: "GitHub Copilot Context Enhancement",
     description: "Developed AI-powered solutions to enhance code context understanding in GitHub Copilot, improving the quality and relevance of AI code suggestions.",
-    tags: ["AI", "Machine Learning", "TypeScript", "Python"],
+    tags: ["LLM", "AI", "Machine Learning", ".NET", "C#"],
     githubUrl: null, // Proprietary
     liveUrl: null,
     codeSnippet: null

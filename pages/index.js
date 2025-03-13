@@ -10,6 +10,7 @@ const codeSnippet = `// Welcome to my portfolio
 import { Mohaimen } from 'portfolio';
 
 const skills = [
+  '.NET', 'C#', 'ASP.NET', 'MVC', 'Web API',
   'Node.js', 'React', 'Next.js',
   'TypeScript', 'Node.js', 'Python',
   'Azure', 'AWS', 'LLM', 'Machine Learning',

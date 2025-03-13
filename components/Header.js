@@ -46,7 +46,7 @@ const Header = ({ currentPage }) => {
 
   const socials = [
     { href: 'https://github.com/mohaimenhasan', icon: <FaGithub size={20} />, label: 'GitHub' },
-    { href: 'https://linkedin.com/in/mohaimenhasan', icon: <FaLinkedin size={20} />, label: 'LinkedIn' },
+    { href: 'https://linkedin.com/in/mohaimenkhan', icon: <FaLinkedin size={20} />, label: 'LinkedIn' },
     { href: 'https://x.com/whoismohaimen', icon: <FaTwitter size={20} />, label: 'Twitter' },
   ];
 

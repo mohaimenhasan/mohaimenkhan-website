@@ -31,8 +31,8 @@ class ContextAnalyzer {
     title: "Spotify Music Trend Predictor",
     description: "Built a machine learning model that predicts music trend popularity using Spotify data, with visualization of prediction confidence and feature importance.",
     tags: ["Python", "TensorFlow", "Spotify API", "Data Visualization"],
-    githubUrl: "https://github.com/mohaimenhasan/spotify-trend-predictor",
-    liveUrl: null,
+    githubUrl: "https://github.com/mohaimenhasan/Crystal-Ball-Music-Trend-Predictor-Hack-The-6",
+    liveUrl: "https://mohaimenhasan.github.io/Crystal-Ball-Music-Trend-Predictor-Hack-The-6/",
     codeSnippet: `import tensorflow as tf
 import numpy as np
 from spotify_api import SpotifyClient
@@ -58,35 +58,35 @@ class MusicTrendPredictor:
     }`
   },
   {
-    title: "AI-Powered Rental Bidding Platform",
-    description: "Created a platform that allows tenants to bid on rental properties before they're listed publicly, with AI-driven pricing recommendations.",
-    tags: ["React", "Node.js", "MongoDB", "Machine Learning"],
-    githubUrl: "https://github.com/mohaimenhasan/rental-bidding-platform",
+    title: "Crime Rate Predictor in Toronto",
+    description: "Created a machine learning model that predicts crime rates in Toronto, using data from the Toronto Police Service and the City of Toronto Open Data Portal.",
+    tags: ["Jupyter Notebook", "Python", "Machine Learning"],
+    githubUrl: "https://github.com/mohaimenhasan/Toronto-Crime-Predictor",
     liveUrl: null,
     codeSnippet: null
   },
   {
-    title: "Network Bottleneck Detector",
-    description: "Developed machine learning models to identify network bottlenecks and predict potential issues before they affect performance.",
-    tags: ["Python", "Scikit-learn", "Network Analysis", "Time Series"],
-    githubUrl: "https://github.com/mohaimenhasan/network-bottleneck-detector",
+    title: "Flight Delay Predictor",
+    description: "Developed a machine learning model that predicts flight delays at Toronto Pearson International Airport, using historical flight data from the Bureau of Transportation Statistics.",
+    tags: ["Python", "numpy", "pandas", "Time Series"],
+    githubUrl: "",
     liveUrl: null,
     codeSnippet: null
   },
   {
-    title: "Automated VM Deployment System",
-    description: "Built system for automating virtual machine deployments with custom configurations and monitoring capabilities.",
-    tags: ["Python", "Docker", "Kubernetes", "Infrastructure as Code"],
-    githubUrl: "https://github.com/mohaimenhasan/vm-automation",
+    title: "Therapy Chatbot",
+    description: "Built a chatbot on WhatsApp with LLM that provides mental health support and resources, using CBT techniques to analyze user input and generate empathetic responses.",
+    tags: ["JavaScript", "Node.js", "Twilio API", "LLM"],
+    githubUrl: "https://github.com/mohaimenhasan/TheraBot",
     liveUrl: null,
     codeSnippet: null
   },
   {
-    title: "Mood-Based Music Recommender",
-    description: "App that analyzes text input to determine mood and recommends music playlists accordingly, integrating with Spotify API.",
+    title: "Music based Mood Analyzer",
+    description: "App that tries to predict your mood based on your Spotify playlist and suggests songs to vibe accordingly.",
     tags: ["React Native", "NLP", "Spotify API", "Node.js"],
-    githubUrl: "https://github.com/mohaimenhasan/mood-music",
-    liveUrl: null,
+    githubUrl: "https://github.com/mohaimenhasan/Mood-Analyzer",
+    liveUrl: "https://mohaimenhasan.github.io/Mood-Analyzer/",
     codeSnippet: null
   }
 ];

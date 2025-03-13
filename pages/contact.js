@@ -13,7 +13,7 @@ const socialLinks = [
   {
     name: 'LinkedIn',
     icon: <FaLinkedin size={24} />,
-    url: 'https://linkedin.com/in/mohaimenhasan',
+    url: 'https://linkedin.com/in/mohaimenkhan',
     color: 'hover:text-blue-400'
   },
   {

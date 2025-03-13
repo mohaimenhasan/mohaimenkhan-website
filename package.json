@@ -15,21 +15,25 @@
   "dependencies": {
     "framer-motion": "^6.2.6",
     "next": "13.4.19",
+    "prism-react-renderer": "^2.0.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "rss-parser": "^3.12.0",
-    "react-syntax-highlighter": "^15.5.0",
-    "react-particles": "^2.12.2",
-    "tsparticles": "^2.12.0",
-    "prism-react-renderer": "^2.0.6",
-    "three": "^0.157.0",
-    "react-three-fiber": "^6.0.13",
     "react-icons": "^4.11.0",
-    "react-pdf": "^7.3.3"
+    "react-particles": "^2.12.2",
+    "react-pdf": "^7.3.3",
+    "react-syntax-highlighter": "^15.5.0",
+    "react-three-fiber": "^6.0.13",
+    "rss-parser": "^3.12.0",
+    "three": "^0.157.0",
+    "tsparticles": "^2.12.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
+    "canvas": "^3.1.0",
+    "favicons": "^7.2.0",
+    "favicons-webpack-plugin": "^6.0.1",
     "postcss": "^8.4.27",
+    "sharp": "^0.33.5",
     "tailwindcss": "^3.3.3"
   }
 }

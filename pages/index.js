@@ -1,9 +1,10 @@
 import Layout from '../components/Layout';
 import ParticleBackground from '../components/ParticleBackground';
 import CodeBlock from '../components/CodeBlock';
+import AwardCard from '../components/AwardCard';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { FaArrowRight, FaBriefcase, FaLaptopCode, FaUserAlt } from 'react-icons/fa';
+import { FaArrowRight, FaBriefcase, FaLaptopCode, FaUserAlt, FaAward } from 'react-icons/fa';
 
 const codeSnippet = `// Welcome to my portfolio
 import { Mohaimen } from 'portfolio';
@@ -23,6 +24,39 @@ function Introduction() {
     />
   );
 }`;
+
+const awards = [
+  {
+    title: "U.S. Patent: System and Method for Tenant Controlled and Automatically Optimized Rent Bidding",
+    description: "Patent for an innovative rent bidding platform that optimizes rent bidding for tenants, created during my PEY Co-op.",
+    url: "https://patents.justia.com/patent/20210049677",
+    year: "2021"
+  },
+  {
+    title: "Patent Pending: Reducing Hallucination for LLM-based Code Generation",
+    description: "Developed techniques to significantly reduce hallucinations in large language models for code generation applications.",
+    url: "https://patents.google.com/patent/US20110178620A1/en",
+    year: "2023"
+  },
+  {
+    title: "U of T Engineering Alumni Feature",
+    description: "Featured for patenting a tool created during PEY Co-op that optimizes rent bidding for tenants.",
+    url: "https://news.engineering.utoronto.ca/u-of-t-engineering-alumnus-patents-tool-created-during-pey-co-op-that-optimizes-rent-bidding-for-tenants/",
+    year: "2021"
+  },
+  {
+    title: "The Financial Express: Journey in AI Innovation",
+    description: "Featured in The Financial Express for contributions to AI innovation and development.",
+    url: "https://thefinancialexpress.com.bd/youth-and-entrepreneurship/mohaimens-journey-in-ai-innovation",
+    year: "2023"
+  },
+  {
+    title: "ECE Alumni Success Story",
+    description: "Featured by University of Toronto's Electrical & Computer Engineering department for successful patent work.",
+    url: "https://www.ece.utoronto.ca/news/ece-alumnus-patents-tool-created-during-pey-co-op-that-optimizes-rent-bidding-for-tenants/",
+    year: "2021"
+  }
+];
 
 export default function Home() {
   return (
@@ -136,6 +170,31 @@ export default function Home() {
                   <FaArrowRight size={12} />
                 </Link>
               </div>
+            </div>
+          </motion.div>
+          
+          <motion.div 
+            className="mt-20"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+          >
+            <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
+              <span className="text-code-green mr-2">#</span> 
+              <FaAward className="text-code-yellow mr-2" />
+              Patents & Recognition
+            </h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {awards.map((award, index) => (
+                <AwardCard 
+                  key={index}
+                  title={award.title}
+                  description={award.description}
+                  url={award.url}
+                  year={award.year}
+                />
+              ))}
             </div>
           </motion.div>
         </div>

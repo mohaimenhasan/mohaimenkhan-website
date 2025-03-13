@@ -2,7 +2,174 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom global styles */
+:root {
+  --bg-terminal: #282c34;
+  --blue-code: #569cd6;
+  --green-code: #6a9955;
+  --yellow-code: #dcdcaa;
+  --orange-code: #ce9178;
+  --purple-code: #c586c0;
+  --red-code: #f44747;
+}
+
 body {
   font-family: 'Inter', sans-serif;
+  background-color: var(--bg-terminal);
+  color: white;
+}
+
+code, pre, .font-mono {
+  font-family: 'Fira Code', Consolas, Monaco, 'Courier New', monospace;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3e3e3e;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Cursor blink animation */
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-cursor-blink {
+  animation: cursor-blink 1.2s infinite;
+}
+
+/* Typing animation for text reveal */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+.animate-typing {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 3.5s steps(40, end);
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Link hover effect */
+.link-hover-effect {
+  position: relative;
+}
+
+.link-hover-effect::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--blue-code);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.link-hover-effect:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Glass effect for cards */
+.glass-effect {
+  background: rgba(30, 30, 30, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Terminal text effect */
+.terminal-text::before {
+  content: '>';
+  color: var(--green-code);
+  margin-right: 8px;
+}
+
+/* Code block styling */
+.code-block {
+  position: relative;
+  background-color: #1e1e1e;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.code-block-header {
+  background-color: #2d2d2d;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #3d3d3d;
+}
+
+.code-window-buttons {
+  display: flex;
+  gap: 6px;
+  margin-right: 10px;
+}
+
+.code-window-button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.code-window-close { background-color: #ff5f56; }
+.code-window-minimize { background-color: #ffbd2e; }
+.code-window-maximize { background-color: #27c93f; }
+
+/* Dark mode toggle */
+.dark-mode-toggle {
+  position: relative;
+  width: 50px;
+  height: 24px;
+  border-radius: 12px;
+  background-color: #3d3d3d;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dark-mode-toggle::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  transition: transform 0.3s;
+}
+
+.dark-mode-active .dark-mode-toggle {
+  background-color: var(--blue-code);
+}
+
+.dark-mode-active .dark-mode-toggle::after {
+  transform: translateX(26px);
 }

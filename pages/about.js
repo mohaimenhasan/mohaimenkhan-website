@@ -253,6 +253,31 @@ export default function About() {
                     and DevOps practices.
                   </p>
                 </div>
+                
+                <div className="border-l-4 border-code-pink pl-6 py-2">
+                  <h3 className="text-xl font-semibold text-white">BMO Financial Group</h3>
+                  <p className="text-code-pink font-mono">Data Analyst</p>
+                  <p className="text-gray-400 text-sm mb-2">
+                    July 2017 - September 2017 <JobDuration startDate="2017-07-01" endDate="2017-09-30" />
+                  </p>
+                  <p className="text-gray-300">
+                    Created SQL queries to analyze data from 900+ branches for the Information Management department.
+                    Identified 5 major transaction processing delays through data anomaly research.
+                    Developed an AngularJS web application for employee surveys reaching 50 staff members.
+                  </p>
+                </div>
+                
+                <div className="border-l-4 border-code-red pl-6 py-2">
+                  <h3 className="text-xl font-semibold text-white">Legal Aid Ontario</h3>
+                  <p className="text-code-red font-mono">IT Intern</p>
+                  <p className="text-gray-400 text-sm mb-2">
+                    June 2016 - September 2016 <JobDuration startDate="2016-06-01" endDate="2016-09-30" />
+                  </p>
+                  <p className="text-gray-300">
+                    Created Python unit tests and tested software bugs after installing law-software on 600 computers across Ontario.
+                    Assisted in upgrading computers from 24 provincial offices remotely to Microsoft Office 2013.
+                  </p>
+                </div>
               </div>
             </motion.div>
           </div>

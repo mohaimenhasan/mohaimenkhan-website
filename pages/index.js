@@ -36,8 +36,8 @@ const awards = [
   {
     title: "Patent Pending: Reducing Hallucination for LLM-based Code Generation",
     description: "Developed techniques to significantly reduce hallucinations in large language models for code generation applications.",
-    url: "https://patents.google.com/patent/US20110178620A1/en",
-    year: "2023"
+    url: null,
+    year: "2024"
   },
   {
     title: "U of T Engineering Alumni Feature",
@@ -49,7 +49,7 @@ const awards = [
     title: "The Financial Express: Journey in AI Innovation",
     description: "Featured in The Financial Express for contributions to AI innovation and development.",
     url: "https://thefinancialexpress.com.bd/youth-and-entrepreneurship/mohaimens-journey-in-ai-innovation",
-    year: "2023"
+    year: "2024"
   },
   {
     title: "ECE Alumni Success Story",

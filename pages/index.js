@@ -8,10 +8,10 @@ export default function Home() {
         <h1 className="text-xl font-bold">Mohaimen Khan</h1>
         <nav>
           <ul className="flex space-x-4">
-            <li><Link href="/about">About</Link></li>
-            <li><Link href="/projects">Projects</Link></li>
-            <li><Link href="/blog">Blog</Link></li>
-            <li><Link href="/contact">Contact</Link></li>
+            <li><Link href="/about" className="hover:text-blue-400">About</Link></li>
+            <li><Link href="/projects" className="hover:text-blue-400">Projects</Link></li>
+            <li><Link href="/blog" className="hover:text-blue-400">Blog</Link></li>
+            <li><Link href="/contact" className="hover:text-blue-400">Contact</Link></li>
           </ul>
         </nav>
       </header>
@@ -26,10 +26,8 @@ export default function Home() {
           <p className="mb-8">
             I’m Mohaimen Khan, a Software Engineer passionate about building innovative solutions with code.
           </p>
-          <Link href="/about">
-            <a className="px-6 py-3 bg-blue-500 rounded hover:bg-blue-600 transition">
-              Learn More About Me
-            </a>
+          <Link href="/about" className="px-6 py-3 bg-blue-500 rounded hover:bg-blue-600 transition">
+            Learn More About Me
           </Link>
         </motion.div>
       </main>

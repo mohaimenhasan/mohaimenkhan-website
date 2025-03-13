@@ -8,10 +8,10 @@ export default function About() {
         <h1 className="text-xl font-bold">About Me</h1>
         <nav>
           <ul className="flex space-x-4">
-            <li><Link href="/">Home</Link></li>
-            <li><Link href="/projects">Projects</Link></li>
-            <li><Link href="/blog">Blog</Link></li>
-            <li><Link href="/contact">Contact</Link></li>
+            <li><Link href="/" className="hover:text-blue-400">Home</Link></li>
+            <li><Link href="/projects" className="hover:text-blue-400">Projects</Link></li>
+            <li><Link href="/blog" className="hover:text-blue-400">Blog</Link></li>
+            <li><Link href="/contact" className="hover:text-blue-400">Contact</Link></li>
           </ul>
         </nav>
       </header>

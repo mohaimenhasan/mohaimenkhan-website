@@ -16,10 +16,10 @@ export default function Contact() {
         <h1 className="text-xl font-bold">Contact</h1>
         <nav>
           <ul className="flex space-x-4">
-            <li><Link href="/">Home</Link></li>
-            <li><Link href="/about">About</Link></li>
-            <li><Link href="/projects">Projects</Link></li>
-            <li><Link href="/blog">Blog</Link></li>
+            <li><Link href="/" className="hover:text-blue-400">Home</Link></li>
+            <li><Link href="/about" className="hover:text-blue-400">About</Link></li>
+            <li><Link href="/projects" className="hover:text-blue-400">Projects</Link></li>
+            <li><Link href="/blog" className="hover:text-blue-400">Blog</Link></li>
           </ul>
         </nav>
       </header>
@@ -35,7 +35,7 @@ export default function Contact() {
             <p>Thank you for reaching out! I will get back to you soon.</p>
           ) : (
             <form 
-              action="https://formspree.io/f/your_form_id_here" 
+              action="https://formspree.io/f/xpzvkwrl" 
               method="POST"
               onSubmit={handleSubmit}
               className="space-y-4"

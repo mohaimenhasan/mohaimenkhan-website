@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    // Uncomment and set the basePath if deploying from a sub-path (e.g., GitHub Pages repo)
-    // basePath: '/mohaimenkhan-website',
+    // For GitHub Pages deployment
+    basePath: '/portfolio',
     trailingSlash: true,
+    output: 'export',
     images: {
       unoptimized: true
     }

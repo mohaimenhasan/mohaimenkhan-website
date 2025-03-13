@@ -3,20 +3,26 @@ import { motion } from 'framer-motion'
 import Parser from 'rss-parser'
 
 export async function getStaticProps() {
-  const parser = new Parser();
-  const feed = await parser.parseURL('https://mohaimenkhan.substack.com/feed');
-  // Limit to the latest 5 posts
-  const posts = feed.items.slice(0, 5).map(item => ({
-    title: item.title,
-    link: item.link,
-    pubDate: item.pubDate,
-    contentSnippet: item.contentSnippet || ""
-  }));
+  try {
+    const parser = new Parser();
+    const feed = await parser.parseURL('https://mohaimenkhan.substack.com/feed');
+    // Limit to the latest 5 posts
+    const posts = feed.items.slice(0, 5).map(item => ({
+      title: item.title,
+      link: item.link,
+      pubDate: item.pubDate,
+      contentSnippet: item.contentSnippet || ""
+    }));
 
-  return {
-    props: { posts },
-    revalidate: 600 // Re-generate every 10 minutes
-  };
+    return {
+      props: { posts }
+    };
+  } catch (error) {
+    console.error('Failed to fetch RSS feed:', error);
+    return {
+      props: { posts: [] }
+    };
+  }
 }
 
 export default function Blog({ posts }) {
@@ -26,10 +32,10 @@ export default function Blog({ posts }) {
         <h1 className="text-xl font-bold">Blog</h1>
         <nav>
           <ul className="flex space-x-4">
-            <li><Link href="/">Home</Link></li>
-            <li><Link href="/about">About</Link></li>
-            <li><Link href="/projects">Projects</Link></li>
-            <li><Link href="/contact">Contact</Link></li>
+            <li><Link href="/" className="hover:text-blue-400">Home</Link></li>
+            <li><Link href="/about" className="hover:text-blue-400">About</Link></li>
+            <li><Link href="/projects" className="hover:text-blue-400">Projects</Link></li>
+            <li><Link href="/contact" className="hover:text-blue-400">Contact</Link></li>
           </ul>
         </nav>
       </header>

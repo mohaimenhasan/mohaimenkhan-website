@@ -82,7 +82,7 @@ export default function Home() {
               </h1>
               
               <div className="text-xl md:text-2xl text-gray-300 mb-6 font-mono">
-                <span className="text-code-green">&gt;</span> Senior Software Engineer
+                <span className="text-code-green">&gt;</span> Software Engineer
                 <span className="text-white animate-cursor-blink ml-1">_</span>
               </div>
               

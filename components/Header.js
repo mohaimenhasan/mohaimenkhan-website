@@ -61,7 +61,7 @@ const Header = ({ currentPage }) => {
           </Link>
           
           <div className="ml-6 hidden md:block">
-            <TypingEffect text="Mohaimen Khan // Senior Software Engineer" />
+            <TypingEffect text="Mohaimen Khan // Software Engineer" />
           </div>
         </div>
 
